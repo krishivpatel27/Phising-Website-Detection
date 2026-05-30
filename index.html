@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Website Detector</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <main class="container">
+        <header>
+            <div class="logo">
+                <span class="icon">&#128376;</span>
+                <h1>PhishGuard</h1>
+            </div>
+            <p class="subtitle">Advanced Neural Network Threat Detection</p>
+        </header>
+
+        <section class="scanner-section">
+            <form id="scan-form">
+                <div class="input-group">
+                    <input type="url" id="url-input" placeholder="Enter website URL to analyze (e.g. https://example.com)..." required autocomplete="off">
+                    <button type="submit" id="scan-btn">
+                        <span class="btn-text">Analyze</span>
+                        <div class="spinner hidden"></div>
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section id="results-section" style="display: none;">
+            <div class="glass-card result-container">
+                <div class="result-header">
+                    <h2>Analysis Complete</h2>
+                    <div id="prediction-badge" class="badge"></div>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <span class="metric-label">Confidence</span>
+                        <div class="confidence-wrapper">
+                            <div class="confidence-circle">
+                                <span id="confidence-value"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <span class="metric-label">Risk Level</span>
+                        <span id="risk-value"></span>
+                    </div>
+                </div>
+
+                <div class="reasons-card">
+                    <h3>Identified Characteristics</h3>
+                    <ul id="reasons-list">
+                        <!-- Reasons populated by JS -->
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
